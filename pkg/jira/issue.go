@@ -306,7 +306,7 @@ type issueCommentProperty struct {
 }
 type issueCommentRequest struct {
 	Body       string                 `json:"body"`
-	Properties []issueCommentProperty `json:"properties"`
+	Properties []issueCommentProperty `json:"properties,omitempty"`
 }
 
 // AddIssueComment adds comment to an issue using POST /issue/{key}/comment endpoint.
@@ -330,6 +330,32 @@ func (c *Client) AddIssueComment(key, comment string, internal bool) error {
 	defer func() { _ = res.Body.Close() }()
 
 	if res.StatusCode != http.StatusCreated {
+		return formatUnexpectedResponse(res)
+	}
+	return nil
+}
+
+// UpdateIssueComment updates an existing comment using PUT /issue/{key}/comment/{id} endpoint.
+func (c *Client) UpdateIssueComment(key, id, comment string) error {
+	body, err := json.Marshal(&issueCommentRequest{Body: md.ToJiraMD(comment)})
+	if err != nil {
+		return err
+	}
+
+	path := fmt.Sprintf("/issue/%s/comment/%s", key, id)
+	res, err := c.PutV2(context.Background(), path, body, Header{
+		"Accept":       "application/json",
+		"Content-Type": "application/json",
+	})
+	if err != nil {
+		return err
+	}
+	if res == nil {
+		return ErrEmptyResponse
+	}
+	defer func() { _ = res.Body.Close() }()
+
+	if res.StatusCode != http.StatusOK {
 		return formatUnexpectedResponse(res)
 	}
 	return nil

@@ -534,6 +534,22 @@ comment body template
 EOF
 ```
 
+##### Edit
+The `edit` command replaces the body of an existing comment. Comment IDs are not shown in the normal issue view. Find them in the `comment.comments[].id` fields
+of `jira issue view ISSUE-1 --raw`.
+The body can be passed as an argument, with `--template`, or on standard input.
+
+```sh
+# Edit a comment
+$ jira issue comment edit ISSUE-1 10001 "Updated comment body"
+
+# Load the new body from a template file
+$ jira issue comment edit ISSUE-1 10001 --template /path/to/template.tmpl
+
+# Or, use pipe to read input directly from standard input
+$ echo "Comment from stdin" | jira issue comment edit ISSUE-1 10001
+```
+
 #### Worklog
 The `worklog` command provides a list of sub-commands to manage issue worklog (timelog).
 
