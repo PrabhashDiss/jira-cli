@@ -3,10 +3,10 @@ package view
 import (
 	"fmt"
 
-	"github.com/ankitpokhrel/jira-cli/api"
-	"github.com/ankitpokhrel/jira-cli/pkg/jira"
-	"github.com/ankitpokhrel/jira-cli/pkg/jira/filter/issue"
-	"github.com/ankitpokhrel/jira-cli/pkg/tui"
+	"github.com/PrabhashDiss/jira-cli/api"
+	"github.com/PrabhashDiss/jira-cli/pkg/jira"
+	"github.com/PrabhashDiss/jira-cli/pkg/jira/filter/issue"
+	"github.com/PrabhashDiss/jira-cli/pkg/tui"
 )
 
 // EpicIssueFunc provides issues for the epic.

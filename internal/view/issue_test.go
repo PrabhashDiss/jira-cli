@@ -6,9 +6,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/ankitpokhrel/jira-cli/pkg/adf"
-	"github.com/ankitpokhrel/jira-cli/pkg/jira"
-	"github.com/ankitpokhrel/jira-cli/pkg/tui"
+	"github.com/PrabhashDiss/jira-cli/pkg/adf"
+	"github.com/PrabhashDiss/jira-cli/pkg/jira"
+	"github.com/PrabhashDiss/jira-cli/pkg/tui"
 )
 
 func TestIssueDetailsRenderInPlainView(t *testing.T) {

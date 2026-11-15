@@ -8,10 +8,10 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/ankitpokhrel/jira-cli/internal/cmdutil"
-	jiraConfig "github.com/ankitpokhrel/jira-cli/internal/config"
-	"github.com/ankitpokhrel/jira-cli/internal/query"
-	"github.com/ankitpokhrel/jira-cli/pkg/jira"
+	"github.com/PrabhashDiss/jira-cli/internal/cmdutil"
+	jiraConfig "github.com/PrabhashDiss/jira-cli/internal/config"
+	"github.com/PrabhashDiss/jira-cli/internal/query"
+	"github.com/PrabhashDiss/jira-cli/pkg/jira"
 )
 
 type initParams struct {

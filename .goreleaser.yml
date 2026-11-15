@@ -17,9 +17,9 @@ builds:
       main: ./cmd/jira
       ldflags:
         - -s -w
-        - -X github.com/ankitpokhrel/jira-cli/internal/version.Version={{.Version}}
-        - -X github.com/ankitpokhrel/jira-cli/internal/version.GitCommit={{.FullCommit}}
-        - -X github.com/ankitpokhrel/jira-cli/internal/version.SourceDateEpoch={{.CommitTimestamp}}
+        - -X github.com/PrabhashDiss/jira-cli/internal/version.Version={{.Version}}
+        - -X github.com/PrabhashDiss/jira-cli/internal/version.GitCommit={{.FullCommit}}
+        - -X github.com/PrabhashDiss/jira-cli/internal/version.SourceDateEpoch={{.CommitTimestamp}}
       env:
         - CGO_ENABLED=0
     id: macOS
@@ -61,7 +61,7 @@ checksum:
 
 brews:
   - name: jira-cli
-    homepage: "https://github.com/ankitpokhrel/jira-cli"
+    homepage: "https://github.com/PrabhashDiss/jira-cli"
     description: "🔥 Feature-rich interactive Jira command-line"
     license: "MIT"
 
@@ -74,7 +74,7 @@ brews:
 
     custom_block: |
       head do
-        url "https://github.com/ankitpokhrel/jira-cli.git", branch: "main"
+        url "https://github.com/PrabhashDiss/jira-cli.git", branch: "main"
         depends_on "go"
       end
 

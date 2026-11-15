@@ -6,11 +6,11 @@ import (
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 
-	"github.com/ankitpokhrel/jira-cli/api"
-	"github.com/ankitpokhrel/jira-cli/internal/cmdutil"
-	tuiView "github.com/ankitpokhrel/jira-cli/internal/view"
-	"github.com/ankitpokhrel/jira-cli/pkg/jira"
-	"github.com/ankitpokhrel/jira-cli/pkg/jira/filter/issue"
+	"github.com/PrabhashDiss/jira-cli/api"
+	"github.com/PrabhashDiss/jira-cli/internal/cmdutil"
+	tuiView "github.com/PrabhashDiss/jira-cli/internal/view"
+	"github.com/PrabhashDiss/jira-cli/pkg/jira"
+	"github.com/PrabhashDiss/jira-cli/pkg/jira/filter/issue"
 )
 
 const (

@@ -6,8 +6,8 @@ import (
 	"io"
 	"text/tabwriter"
 
-	"github.com/ankitpokhrel/jira-cli/pkg/jira"
-	"github.com/ankitpokhrel/jira-cli/pkg/tui"
+	"github.com/PrabhashDiss/jira-cli/pkg/jira"
+	"github.com/PrabhashDiss/jira-cli/pkg/tui"
 )
 
 // BoardOption is a functional option to wrap board properties.
