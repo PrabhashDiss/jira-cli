@@ -361,6 +361,24 @@ func (c *Client) UpdateIssueComment(key, id, comment string) error {
 	return nil
 }
 
+// DeleteIssueComment deletes a comment using DELETE /issue/{key}/comment/{id} endpoint.
+func (c *Client) DeleteIssueComment(key, id string) error {
+	path := fmt.Sprintf("/issue/%s/comment/%s", key, id)
+	res, err := c.DeleteV2(context.Background(), path, nil)
+	if err != nil {
+		return err
+	}
+	if res == nil {
+		return ErrEmptyResponse
+	}
+	defer func() { _ = res.Body.Close() }()
+
+	if res.StatusCode != http.StatusNoContent {
+		return formatUnexpectedResponse(res)
+	}
+	return nil
+}
+
 type issueWorklogRequest struct {
 	Started   string `json:"started,omitempty"`
 	TimeSpent string `json:"timeSpent"`

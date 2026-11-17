@@ -4,6 +4,7 @@ import (
 	"github.com/spf13/cobra"
 
 	"github.com/PrabhashDiss/jira-cli/internal/cmd/issue/comment/add"
+	"github.com/PrabhashDiss/jira-cli/internal/cmd/issue/comment/delete"
 	"github.com/PrabhashDiss/jira-cli/internal/cmd/issue/comment/edit"
 )
 
@@ -21,6 +22,7 @@ func NewCmdComment() *cobra.Command {
 
 	cmd.AddCommand(add.NewCmdCommentAdd())
 	cmd.AddCommand(edit.NewCmdCommentEdit())
+	cmd.AddCommand(delete.NewCmdCommentDelete())
 
 	return &cmd
 }

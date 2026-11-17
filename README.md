@@ -550,6 +550,18 @@ $ jira issue comment edit ISSUE-1 10001 --template /path/to/template.tmpl
 $ echo "Comment from stdin" | jira issue comment edit ISSUE-1 10001
 ```
 
+##### Delete
+The `delete` command removes a comment from an issue. It asks for confirmation unless `--force` is passed.
+Find comment IDs as described for the `edit` command.
+
+```sh
+# Delete a comment
+$ jira issue comment delete ISSUE-1 10001
+
+# Skip the confirmation prompt
+$ jira issue comment delete ISSUE-1 10001 --force
+```
+
 #### Worklog
 The `worklog` command provides a list of sub-commands to manage issue worklog (timelog).
 
